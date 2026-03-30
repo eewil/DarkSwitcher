@@ -13,11 +13,58 @@ struct DarkSwitcherApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
+    var timer: Timer?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupMenuBar()
         setupThemeObserver()
         updateIcon()
+        startAutoMode()
+    }
+    func startAutoMode() {
+        timer?.invalidate()
+
+        guard SettingsManager.shared.autoModeEnabled else { return }
+
+
+        checkAndApplyTheme()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+            self.checkAndApplyTheme()
+        }
+    }
+    func checkAndApplyTheme() {
+        let hour = Calendar.current.component(.hour, from: Date())
+        
+        let start = SettingsManager.shared.startHour
+        let end = SettingsManager.shared.endHour
+        
+        let shouldBeDark: Bool
+        
+        if start > end {
+            shouldBeDark = hour >= start || hour < end
+        } else {
+            shouldBeDark = hour >= start && hour < end
+        }
+
+        applyTheme(dark: shouldBeDark)
+    }
+    func applyTheme(dark: Bool) {
+        let isCurrentlyDark = NSApp.effectiveAppearance.name.rawValue.contains("Dark")
+
+        if isCurrentlyDark == dark { return }
+
+        let script = """
+        tell application "System Events"
+            tell appearance preferences
+                set dark mode to \(dark ? "true" : "false")
+            end tell
+        end tell
+        """
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            NSAppleScript(source: script)?.executeAndReturnError(nil)
+        }
     }
 
     func setupMenuBar() {
@@ -45,6 +92,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             autoLaunchItem.state = LaunchAtLogin.isEnabled ? .on : .off
             
             menu.addItem(autoLaunchItem)
+
+       
+            let autoModeItem = NSMenuItem(
+                title: "Auto Mode",
+                action: #selector(toggleAutoMode),
+                keyEquivalent: ""
+            )
+            autoModeItem.target = self
+            autoModeItem.state = SettingsManager.shared.autoModeEnabled ? .on : .off
+
+            menu.addItem(autoModeItem)
+  
+
             menu.addItem(NSMenuItem.separator())
             menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q"))
             
@@ -53,12 +113,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusItem?.menu = nil
             
         } else {
+       
+            if SettingsManager.shared.autoModeEnabled {
+                SettingsManager.shared.autoModeEnabled = false
+                timer?.invalidate()
+                print("Auto Mode disabled due to manual override")
+            }
+
             toggleTheme()
         }
     }
     
     @objc func toggleAutoLaunch() {
         LaunchAtLogin.isEnabled.toggle()
+    }
+    @objc func toggleAutoMode() {
+        SettingsManager.shared.autoModeEnabled.toggle()
+        startAutoMode()
     }
 
     func toggleTheme() {
